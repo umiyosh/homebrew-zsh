@@ -49,7 +49,7 @@ class Zsh < Formula
     system "#{bin}/zsh", "--version"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Add the following to your zshrc to access the online help:
       unalias run-help
       autoload run-help
