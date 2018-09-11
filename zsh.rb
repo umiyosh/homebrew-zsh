@@ -4,7 +4,7 @@ class Zsh < Formula
   homepage 'http://www.zsh.org/'
   url 'http://downloads.sourceforge.net/project/zsh/zsh/5.0.5/zsh-5.0.5.tar.bz2'
   mirror 'http://www.zsh.org/pub/zsh-5.0.5.tar.bz2'
-  sha1 '75426146bce45ee176d9d50b32f1ced78418ae16'
+  sha256 '6624d2fb6c8fa4e044d2b009f86ed1617fe8583c83acfceba7ec82826cfa8eaf'
 
   depends_on 'gdbm'
   depends_on 'pcre'
