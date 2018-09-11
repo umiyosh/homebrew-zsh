@@ -2,9 +2,9 @@ require 'formula'
 
 class Zsh < Formula
   homepage 'http://www.zsh.org/'
-  url 'https://downloads.sourceforge.net/project/zsh/zsh/5.0.5/zsh-5.0.5.tar.bz2'
+  url 'http://downloads.sourceforge.net/project/zsh/zsh/5.0.5/zsh-5.0.5.tar.bz2'
   mirror 'http://www.zsh.org/pub/zsh-5.0.5.tar.bz2'
-  sha256 '6624d2fb6c8fa4e044d2b009f86ed1617fe8583c83acfceba7ec82826cfa8eaf'
+  sha1 '75426146bce45ee176d9d50b32f1ced78418ae16'
 
   depends_on 'gdbm'
   depends_on 'pcre'
@@ -38,11 +38,14 @@ class Zsh < Formula
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
 
-    system "make", "install"
-    system "make", "install.info"
+    system "make install"
+
+    if ENV['HOMEBREW_KEEP_INFO']
+      system "make install.info"
+    end
   end
 
-  test do
+  def test
     system "#{bin}/zsh", "--version"
   end
 
