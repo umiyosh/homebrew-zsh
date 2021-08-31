@@ -24,7 +24,7 @@ class Zsh < Formula
       --enable-pcre
       --enable-zsh-secure-free
       --with-tcsetpgrp
-      --disable-etcdir
+      --enable-etcdir=/etc
     ]
 
     system "./configure", *args
