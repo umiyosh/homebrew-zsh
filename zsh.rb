@@ -24,13 +24,8 @@ class Zsh < Formula
       --enable-pcre
       --enable-zsh-secure-free
       --with-tcsetpgrp
+      --disable-etcdir
     ]
-
-    if build.include? 'disable-etcdir'
-      args << '--disable-etcdir'
-    else
-      args << '--enable-etcdir=/etc'
-    end
 
     system "./configure", *args
 
